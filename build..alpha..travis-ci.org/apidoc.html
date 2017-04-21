@@ -1,0 +1,2622 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >bell (v8.6.0)</a>
+</h1>
+<h4>Third-party login plugin for hapi</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell">module bell</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.oauth.Client">
+            function <span class="apidocSignatureSpan">bell.</span>oauth.Client
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.register">
+            function <span class="apidocSignatureSpan">bell.</span>register
+            <span class="apidocSignatureSpan">(server, options, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.simulate">
+            function <span class="apidocSignatureSpan">bell.</span>simulate
+            <span class="apidocSignatureSpan">(credentialsFunc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.</span>oauth</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.</span>oauth.Client.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bell.</span>providers</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.oauth">module bell.oauth</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.oauth.Client">
+            function <span class="apidocSignatureSpan">bell.oauth.</span>Client
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.oauth.v1">
+            function <span class="apidocSignatureSpan">bell.oauth.</span>v1
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.oauth.v2">
+            function <span class="apidocSignatureSpan">bell.oauth.</span>v2
+            <span class="apidocSignatureSpan">(settings)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.oauth.Client">module bell.oauth.Client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.oauth.Client.Client">
+            function <span class="apidocSignatureSpan">bell.oauth.</span>Client
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.oauth.Client.baseUri">
+            function <span class="apidocSignatureSpan">bell.oauth.Client.</span>baseUri
+            <span class="apidocSignatureSpan">(uri)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.oauth.Client.header">
+            function <span class="apidocSignatureSpan">bell.oauth.Client.</span>header
+            <span class="apidocSignatureSpan">(oauth)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.oauth.Client.queryString">
+            function <span class="apidocSignatureSpan">bell.oauth.Client.</span>queryString
+            <span class="apidocSignatureSpan">(params)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.oauth.Client.prototype">module bell.oauth.Client.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.oauth.Client.prototype._request">
+            function <span class="apidocSignatureSpan">bell.oauth.Client.prototype.</span>_request
+            <span class="apidocSignatureSpan">(method, uri, params, oauth, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.oauth.Client.prototype.resource">
+            function <span class="apidocSignatureSpan">bell.oauth.Client.prototype.</span>resource
+            <span class="apidocSignatureSpan">(method, uri, params, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.oauth.Client.prototype.signature">
+            function <span class="apidocSignatureSpan">bell.oauth.Client.prototype.</span>signature
+            <span class="apidocSignatureSpan">(method, baseUri, params, oauth, tokenSecret)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.oauth.Client.prototype.temporary">
+            function <span class="apidocSignatureSpan">bell.oauth.Client.prototype.</span>temporary
+            <span class="apidocSignatureSpan">(oauth_callback, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.oauth.Client.prototype.token">
+            function <span class="apidocSignatureSpan">bell.oauth.Client.prototype.</span>token
+            <span class="apidocSignatureSpan">(oauthToken, oauthVerifier, tokenSecret, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bell.providers">module bell.providers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.arcgisonline">
+            function <span class="apidocSignatureSpan">bell.providers.</span>arcgisonline
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.auth0">
+            function <span class="apidocSignatureSpan">bell.providers.</span>auth0
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.azuread">
+            function <span class="apidocSignatureSpan">bell.providers.</span>azuread
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.bitbucket">
+            function <span class="apidocSignatureSpan">bell.providers.</span>bitbucket
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.discord">
+            function <span class="apidocSignatureSpan">bell.providers.</span>discord
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.dropbox">
+            function <span class="apidocSignatureSpan">bell.providers.</span>dropbox
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.facebook">
+            function <span class="apidocSignatureSpan">bell.providers.</span>facebook
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.fitbit">
+            function <span class="apidocSignatureSpan">bell.providers.</span>fitbit
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.foursquare">
+            function <span class="apidocSignatureSpan">bell.providers.</span>foursquare
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.github">
+            function <span class="apidocSignatureSpan">bell.providers.</span>github
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.gitlab">
+            function <span class="apidocSignatureSpan">bell.providers.</span>gitlab
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.google">
+            function <span class="apidocSignatureSpan">bell.providers.</span>google
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.googleplus">
+            function <span class="apidocSignatureSpan">bell.providers.</span>googleplus
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.instagram">
+            function <span class="apidocSignatureSpan">bell.providers.</span>instagram
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.linkedin">
+            function <span class="apidocSignatureSpan">bell.providers.</span>linkedin
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.live">
+            function <span class="apidocSignatureSpan">bell.providers.</span>live
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.medium">
+            function <span class="apidocSignatureSpan">bell.providers.</span>medium
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.meetup">
+            function <span class="apidocSignatureSpan">bell.providers.</span>meetup
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.nest">
+            function <span class="apidocSignatureSpan">bell.providers.</span>nest
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.office365">
+            function <span class="apidocSignatureSpan">bell.providers.</span>office365
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.okta">
+            function <span class="apidocSignatureSpan">bell.providers.</span>okta
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.phabricator">
+            function <span class="apidocSignatureSpan">bell.providers.</span>phabricator
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.pingfed">
+            function <span class="apidocSignatureSpan">bell.providers.</span>pingfed
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.pinterest">
+            function <span class="apidocSignatureSpan">bell.providers.</span>pinterest
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.reddit">
+            function <span class="apidocSignatureSpan">bell.providers.</span>reddit
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.salesforce">
+            function <span class="apidocSignatureSpan">bell.providers.</span>salesforce
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.slack">
+            function <span class="apidocSignatureSpan">bell.providers.</span>slack
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.spotify">
+            function <span class="apidocSignatureSpan">bell.providers.</span>spotify
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.tumblr">
+            function <span class="apidocSignatureSpan">bell.providers.</span>tumblr
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.twitch">
+            function <span class="apidocSignatureSpan">bell.providers.</span>twitch
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.twitter">
+            function <span class="apidocSignatureSpan">bell.providers.</span>twitter
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.vk">
+            function <span class="apidocSignatureSpan">bell.providers.</span>vk
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.wordpress">
+            function <span class="apidocSignatureSpan">bell.providers.</span>wordpress
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bell.providers.yahoo">
+            function <span class="apidocSignatureSpan">bell.providers.</span>yahoo
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell" id="apidoc.module.bell">module bell</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.oauth.Client" id="apidoc.element.bell.oauth.Client">
+        function <span class="apidocSignatureSpan">bell.</span>oauth.Client
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">oauth.Client = function (options) {
+
+    this.provider = options.name;
+    this.settings = {
+        temporary: internals.Client.baseUri(options.provider.temporary),
+        token: internals.Client.baseUri(options.provider.token),
+        clientId: options.clientId,
+        clientSecret: options.provider.signatureMethod === &#x27;RSA-SHA1&#x27; ? options.clientSecret : internals.encode(options.clientSecret
+ || &#x27;&#x27;) + &#x27;&#x26;&#x27;,
+        signatureMethod: options.provider.signatureMethod
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.register" id="apidoc.element.bell.register">
+        function <span class="apidocSignatureSpan">bell.</span>register
+        <span class="apidocSignatureSpan">(server, options, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (server, options, next) {
+
+    server.auth.scheme(&#x27;bell&#x27;, internals.implementation);
+    server.expose(&#x27;oauth&#x27;, OAuth);
+    next();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var Hapi = require(&#x27;hapi&#x27;);
+var server = new Hapi.Server();
+
+server.connection({ port: 8000 });
+
+// Register bell with the server
+server.<span class="apidocCodeKeywordSpan">register</span>(require(&#x27;bell&#x27;), function (err) {
+
+// Declare an authentication strategy using the bell scheme
+// with the name of the provider, cookie encryption password,
+// and the OAuth client credentials.
+server.auth.strategy(&#x27;twitter&#x27;, &#x27;bell&#x27;, {
+    provider: &#x27;twitter&#x27;,
+    password: &#x27;cookie_encryption_password_secure&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.simulate" id="apidoc.element.bell.simulate">
+        function <span class="apidocSignatureSpan">bell.</span>simulate
+        <span class="apidocSignatureSpan">(credentialsFunc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">simulate = function (credentialsFunc) {
+
+    internals.simulate = credentialsFunc;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.oauth" id="apidoc.module.bell.oauth">module bell.oauth</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.oauth.Client" id="apidoc.element.bell.oauth.Client">
+        function <span class="apidocSignatureSpan">bell.oauth.</span>Client
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Client = function (options) {
+
+    this.provider = options.name;
+    this.settings = {
+        temporary: internals.Client.baseUri(options.provider.temporary),
+        token: internals.Client.baseUri(options.provider.token),
+        clientId: options.clientId,
+        clientSecret: options.provider.signatureMethod === &#x27;RSA-SHA1&#x27; ? options.clientSecret : internals.encode(options.clientSecret
+ || &#x27;&#x27;) + &#x27;&#x26;&#x27;,
+        signatureMethod: options.provider.signatureMethod
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.oauth.v1" id="apidoc.element.bell.oauth.v1">
+        function <span class="apidocSignatureSpan">bell.oauth.</span>v1
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">v1 = function (settings) {
+
+    const client = new internals.Client(settings);
+
+    return function (request, reply) {
+
+        const cookie = settings.cookie;
+        const name = settings.name;
+        const query = request.query;
+        const protocol = internals.getProtocol(request, settings);
+
+        // Bail if the upstream service returns an error
+
+        if (query.error === &#x27;access_denied&#x27; ||
+            query.denied) {
+
+            return reply(Boom.internal(&#x27;Application rejected&#x27;));
+        }
+
+        // If not https but cookie is secure, throw error
+
+        if (protocol !== &#x27;https&#x27; &#x26;&#x26; settings.isSecure) {
+            return reply(Boom.internal(&#x27;Invalid setting  - isSecure must be set to false for non-https server&#x27;));
+        }
+
+        // Sign-in Initialization
+
+        if (!request.query.oauth_token) {
+
+            // Obtain temporary OAuth credentials
+
+            const oauth_callback = internals.location(request, protocol, settings.location);
+            return client.temporary(oauth_callback, (err, payload) =&#x3e; {
+
+                if (err) {
+                    return reply(err);
+                }
+
+                const state = {
+                    token: payload.oauth_token,
+                    secret: payload.oauth_token_secret,
+                    query: request.query
+                };
+
+                reply.state(cookie, state);
+
+                const authQuery = internals.resolveProviderParams(request, settings.providerParams);
+                authQuery.oauth_token = payload.oauth_token;
+
+                if (settings.allowRuntimeProviderParams ) {
+                    Hoek.merge(authQuery, request.query);
+                }
+
+                return reply.redirect(settings.provider.auth + &#x27;?&#x27; + internals.queryString(authQuery));
+            });
+        }
+
+        // Authorization callback
+
+        if (!request.query.oauth_verifier) {
+            return reply(Boom.internal(&#x27;Missing verifier parameter in &#x27; + name + &#x27; authorization response&#x27;));
+        }
+
+        const state = request.state[cookie];
+        if (!state) {
+            return internals.refreshRedirect(request, name, protocol, settings, reply);
+        }
+
+        reply.unstate(cookie);
+
+        if (request.query.oauth_token !== state.token) {
+            return reply(Boom.internal(name + &#x27; authorized request token mismatch&#x27;));
+        }
+
+        // Obtain token OAuth credentials
+
+        client.token(state.token, request.query.oauth_verifier, state.secret, (err, payload) =&#x3e; {
+
+            if (err) {
+                return reply(err);
+            }
+
+            const credentials = {
+                provider: name,
+                token: payload.oauth_token,
+                secret: payload.oauth_token_secret,
+                query: state.query
+            };
+
+            if (!settings.provider.profile || settings.skipProfile) {
+                return reply.continue({ credentials });
+            }
+
+            // Obtain user profile
+
+            const get = function (uri, params, callback) {
+
+                if (settings.profileParams) {
+                    Hoek.merge(params, settings.profileParams);
+                }
+
+                return client.resource(&#x27;get&#x27;, uri, params, { token: payload.oauth_token, secret: payload.oauth_token_secret }, (
+err, response) =&#x3e; {
+
+                    if (err) {
+                        return reply(err);
+                    }
+
+                    callback(response);
+                });
+            };
+
+            settings.provider.profile.call(settings, credentials, payload, get, () =&#x3e; {
+
+                return reply.continue({ credentials });
+            });
+        });
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.oauth.v2" id="apidoc.element.bell.oauth.v2">
+        function <span class="apidocSignatureSpan">bell.oauth.</span>v2
+        <span class="apidocSignatureSpan">(settings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">v2 = function (settings) {
+
+    return function (request, reply) {
+
+        const cookie = settings.cookie;
+        const name = settings.name;
+        const protocol = internals.getProtocol(request, settings);
+        let query;
+        let state;
+
+        // Bail if the upstream service returns an error
+        if (request.query.error === &#x27;access_denied&#x27; || request.query.denied) {
+            return reply(Boom.internal(`App rejected: ${request.query.error_description || request.query.denied || &#x27;No information
+ provided&#x27;}`));
+        }
+
+        // If not https but cookie is secure, throw error
+        if (protocol !== &#x27;https&#x27; &#x26;&#x26; settings.isSecure) {
+            return reply(Boom.internal(&#x27;Invalid setting  - isSecure must be set to false for non-https server&#x27;));
+        }
+
+        // Sign-in Initialization
+
+        if (!request.query.code) {
+            const nonce = Cryptiles.randomString(internals.nonceLength);
+            query = internals.resolveProviderParams(request, settings.providerParams);
+
+            if (settings.allowRuntimeProviderParams ) {
+                Hoek.merge(query, request.query);
+            }
+
+            query.client_id = settings.clientId;
+            query.response_type = &#x27;code&#x27;;
+            query.redirect_uri = internals.location(request, protocol, settings.location);
+            query.state = nonce;
+
+            if (settings.runtimeStateCallback) {
+                const runtimeState = settings.runtimeStateCallback(request);
+                if (runtimeState) {
+                    query.state += runtimeState;
+                }
+            }
+
+            let scope = settings.scope || settings.provider.scope;
+            if (typeof scope === &#x27;function&#x27;) {
+                scope = scope(request);
+            }
+            if (scope) {
+                query.scope = scope.join(settings.provider.scopeSeparator || &#x27; &#x27;);
+            }
+
+            state = {
+                nonce,
+                query: request.query
+            };
+
+            reply.state(cookie, state);
+            return reply.redirect(settings.provider.auth + &#x27;?&#x27; + internals.queryString(query));
+        }
+
+        // Authorization callback
+
+        state = request.state[cookie];
+        if (!state) {
+            return internals.refreshRedirect(request, name, protocol, settings, reply);
+        }
+
+        reply.unstate(cookie);
+
+        const requestState = request.query.state || &#x27;&#x27;;
+        if (state.nonce !== requestState.substr(0, Math.min(requestState.length, internals.nonceLength))) {
+            return reply(Boom.internal(&#x27;Incorrect &#x27; + name + &#x27; state parameter&#x27;));
+        }
+
+        query = {
+            grant_type: &#x27;authorization_code&#x27;,
+            code: request.query.code,
+            redirect_uri: internals.location(request, protocol, settings.location)
+        };
+
+        if (settings.provider.useParamsAuth) {
+            query.client_id = settings.clientId;
+            query.client_secret = settings.clientSecret;
+        }
+
+        const requestOptions = {
+            payload: internals.queryString(query),
+            headers: {
+                &#x27;Content-Type&#x27;: &#x27;application/x-www-form-urlencoded&#x27;
+            }
+        };
+
+        if (!settings.provider.useParamsAuth) {
+            requestOptions.headers.Authorization = &#x27;Basic &#x27; + (new Buffer(settings.clientId + &#x27;:&#x27; + settings.clientSecret, &#x27;utf8
+&#x27;)).toString(&#x27;base64&#x27;);
+        }
+
+        if (settings.provider.headers) {
+            Hoek.merge(requestOptions.headers, settings.provider.headers);
+        }
+
+        // Obtain token
+
+        Wreck.post(settings.provider.token, requestOptions, (err, tokenRes, payload) =&#x3e; {
+
+            if (err ||
+                tokenRes.statusCode &#x3c; 200 ||
+                tokenRes.statusCode &#x3e; 299) {
+
+                return reply(Boom.internal(&#x27;Failed obtaining &#x27; + name + &#x27; access token&#x27;, err || payload));
+            }
+
+            payload = internals.parse(payload);
+            if (payload instanceof Error) {
+                return reply(Boom.internal(&#x27;Received invalid payload from &#x27; + name + &#x27; access token endpoint&#x27;, payload));
+            } ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.oauth.Client" id="apidoc.module.bell.oauth.Client">module bell.oauth.Client</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.oauth.Client.Client" id="apidoc.element.bell.oauth.Client.Client">
+        function <span class="apidocSignatureSpan">bell.oauth.</span>Client
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Client = function (options) {
+
+    this.provider = options.name;
+    this.settings = {
+        temporary: internals.Client.baseUri(options.provider.temporary),
+        token: internals.Client.baseUri(options.provider.token),
+        clientId: options.clientId,
+        clientSecret: options.provider.signatureMethod === &#x27;RSA-SHA1&#x27; ? options.clientSecret : internals.encode(options.clientSecret
+ || &#x27;&#x27;) + &#x27;&#x26;&#x27;,
+        signatureMethod: options.provider.signatureMethod
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.oauth.Client.baseUri" id="apidoc.element.bell.oauth.Client.baseUri">
+        function <span class="apidocSignatureSpan">bell.oauth.Client.</span>baseUri
+        <span class="apidocSignatureSpan">(uri)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">baseUri = function (uri) {
+
+    // Base String URI (3.4.1.2)
+
+    const resource = Url.parse(uri, true);
+
+    const protocol = resource.protocol.toLowerCase();
+    const isDefaultPort = resource.port &#x26;&#x26; ((protocol === &#x27;http:&#x27; &#x26;&#x26; resource.port === &#x27;80&#x27;) || (protocol === &#x27;https:&#x27; &#x26;&#x26; resource
+.port === &#x27;443&#x27;));
+    return protocol + &#x27;//&#x27; + resource.hostname.toLowerCase() + (isDefaultPort || !resource.port ? &#x27;&#x27; : &#x27;:&#x27; + resource.port) + resource
+.pathname;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.oauth.Client.header" id="apidoc.element.bell.oauth.Client.header">
+        function <span class="apidocSignatureSpan">bell.oauth.Client.</span>header
+        <span class="apidocSignatureSpan">(oauth)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">header = function (oauth) {
+
+    // Authorization Header (3.5.1)
+
+    let header = &#x27;OAuth &#x27;;
+    const names = Object.keys(oauth);
+    for (let i = 0; i &#x3c; names.length; ++i) {
+        const name = names[i];
+        header += (i ? &#x27;, &#x27; : &#x27;&#x27;) + name + &#x27;=&#x22;&#x27; + internals.encode(oauth[name]) + &#x27;&#x22;&#x27;;
+    }
+
+    return header;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.oauth.Client.queryString" id="apidoc.element.bell.oauth.Client.queryString">
+        function <span class="apidocSignatureSpan">bell.oauth.Client.</span>queryString
+        <span class="apidocSignatureSpan">(params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">queryString = function (params) {
+
+    const keys = Object.keys(params);
+    const fields = [];
+    for (let i = 0; i &#x3c; keys.length; ++i) {
+        const key = keys[i];
+        const value = params[key];
+        const ks = internals.encodePrimitive(key) + &#x27;=&#x27;;
+
+        if (Array.isArray(value)) {
+            for (let j = 0; j &#x3c; value.length; ++j) {
+                fields.push(ks + internals.encodePrimitive(value[j]));
+            }
+        }
+        else {
+            fields.push(ks + internals.encodePrimitive(value));
+        }
+    }
+
+    return fields.join(&#x27;&#x26;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.oauth.Client.prototype" id="apidoc.module.bell.oauth.Client.prototype">module bell.oauth.Client.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.oauth.Client.prototype._request" id="apidoc.element.bell.oauth.Client.prototype._request">
+        function <span class="apidocSignatureSpan">bell.oauth.Client.prototype.</span>_request
+        <span class="apidocSignatureSpan">(method, uri, params, oauth, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_request = function (method, uri, params, oauth, options, callback) {
+
+    method = method.toLowerCase();
+
+    // Prepare generic OAuth parameters
+
+    oauth.oauth_nonce = Cryptiles.randomString(internals.nonceLength);
+    oauth.oauth_timestamp = Math.floor(Date.now() / 1000).toString();
+    oauth.oauth_consumer_key = this.settings.clientId;
+    oauth.oauth_signature_method = this.settings.signatureMethod;
+    oauth.oauth_signature = this.signature(method, uri, params, oauth, options.secret);
+
+    // Calculate OAuth header
+
+    const requestOptions = {
+        headers: {
+            Authorization: internals.Client.header(oauth)
+        }
+    };
+
+    if (params) {
+        const paramsString = internals.queryString(params);
+        if (method === &#x27;get&#x27;) {
+            uri += &#x27;?&#x27; + paramsString;
+        }
+        else {
+            requestOptions.payload = paramsString;
+            requestOptions.headers[&#x27;content-type&#x27;] = &#x27;application/x-www-form-urlencoded&#x27;;
+        }
+    }
+
+    if (options.stream) {
+        return Wreck.request(method, uri, requestOptions, callback);
+    }
+
+    const desc = (options.desc || &#x27;resource&#x27;);
+    return Wreck[method](uri, requestOptions, (err, res, payload) =&#x3e; {
+
+        if (err) {
+            return callback(Boom.internal(&#x27;Failed obtaining &#x27; + this.provider + &#x27; &#x27; + desc, err));
+        }
+
+        if (res.statusCode !== 200) {
+            return callback(Boom.internal(&#x27;Failed obtaining &#x27; + this.provider + &#x27; &#x27; + desc, payload), payload, res.statusCode);
+        }
+
+        if (!options.raw) {
+            payload = internals.parse(payload);
+            if (payload instanceof Error) {
+                return callback(Boom.internal(&#x27;Received invalid payload from &#x27; + this.provider + &#x27; &#x27; + desc + &#x27; endpoint&#x27;, payload
+), payload, res.statusCode);
+            }
+        }
+
+        return callback(null, payload, res.statusCode);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.oauth.Client.prototype.resource" id="apidoc.element.bell.oauth.Client.prototype.resource">
+        function <span class="apidocSignatureSpan">bell.oauth.Client.prototype.</span>resource
+        <span class="apidocSignatureSpan">(method, uri, params, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resource = function (method, uri, params, options, callback) {
+
+    // Making Requests (3.1)
+
+    const oauth = {
+        oauth_token: options.token
+    };
+
+    return this._request(method, uri, params, oauth, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.oauth.Client.prototype.signature" id="apidoc.element.bell.oauth.Client.prototype.signature">
+        function <span class="apidocSignatureSpan">bell.oauth.Client.prototype.</span>signature
+        <span class="apidocSignatureSpan">(method, baseUri, params, oauth, tokenSecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">signature = function (method, baseUri, params, oauth, tokenSecret) {
+
+    // Parameters Normalization (3.4.1.3.2)
+
+    const normalized = [];
+    const normalize = function (source) {
+
+        const names = Object.keys(source);
+        for (let i = 0; i &#x3c; names.length; ++i) {
+            const name = names[i];
+            const value = source[name];
+
+            const encodedName = internals.encode(name);
+            if (Array.isArray(value)) {
+                for (let j = 0; j &#x3c; value.length; ++j) {
+                    normalized.push([encodedName, internals.encode(value[j])]);
+                }
+            }
+            else {
+                normalized.push([encodedName, internals.encode(value)]);
+            }
+        }
+    };
+
+    if (params) {
+        normalize(params);
+    }
+
+    normalize(oauth);
+
+    normalized.sort((a, b) =&#x3e; {
+
+        return (a[0] &#x3c; b[0] ? -1
+                            : (a[0] &#x3e; b[0] ? 1
+                                           : (a[1] &#x3c; b[1] ? -1
+                                                          : (a[1] &#x3e; b[1] ? 1 : 0))));
+    });
+
+    let normalizedParam = &#x27;&#x27;;
+    for (let i = 0; i &#x3c; normalized.length; ++i) {
+        normalizedParam += (i ? &#x27;&#x26;&#x27; : &#x27;&#x27;) + normalized[i][0] + &#x27;=&#x27; + normalized[i][1];
+    }
+
+    // String Construction (3.4.1.1)
+
+    const baseString = internals.encode(method.toUpperCase()) + &#x27;&#x26;&#x27; +
+                       internals.encode(baseUri) + &#x27;&#x26;&#x27; +
+                       internals.encode(normalizedParam);
+
+    if (oauth.oauth_signature_method === &#x27;RSA-SHA1&#x27;) { // RSA-SHA1 (3.4.3)
+        return Crypto.createSign(&#x27;sha1&#x27;).update(baseString).sign(this.settings.clientSecret, &#x27;base64&#x27;);
+    }
+    // HMAC-SHA1 (3.4.2)
+    const key = tokenSecret ? (this.settings.clientSecret + internals.encode(tokenSecret)) : this.settings.clientSecret;
+    return Crypto.createHmac(&#x27;sha1&#x27;, key).update(baseString).digest(&#x27;base64&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.oauth.Client.prototype.temporary" id="apidoc.element.bell.oauth.Client.prototype.temporary">
+        function <span class="apidocSignatureSpan">bell.oauth.Client.prototype.</span>temporary
+        <span class="apidocSignatureSpan">(oauth_callback, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">temporary = function (oauth_callback, callback) {
+
+    // Temporary Credentials (2.1)
+
+    const oauth = {
+        oauth_callback
+    };
+
+    return this._request(&#x27;post&#x27;, this.settings.temporary, null, oauth, { desc: &#x27;temporary credentials&#x27; }, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.oauth.Client.prototype.token" id="apidoc.element.bell.oauth.Client.prototype.token">
+        function <span class="apidocSignatureSpan">bell.oauth.Client.prototype.</span>token
+        <span class="apidocSignatureSpan">(oauthToken, oauthVerifier, tokenSecret, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">token = function (oauthToken, oauthVerifier, tokenSecret, callback) {
+
+    // Token Credentials (2.3)
+
+    const oauth = {
+        oauth_token: oauthToken,
+        oauth_verifier: oauthVerifier
+    };
+
+    return this._request(&#x27;post&#x27;, this.settings.token, null, oauth, { secret: tokenSecret, desc: &#x27;token credentials&#x27; }, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bell.providers" id="apidoc.module.bell.providers">module bell.providers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.arcgisonline" id="apidoc.element.bell.providers.arcgisonline">
+        function <span class="apidocSignatureSpan">bell.providers.</span>arcgisonline
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">arcgisonline = function (options) {
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: &#x27;https://www.arcgis.com/sharing/rest/oauth2/authorize&#x27;,
+        token: &#x27;https://www.arcgis.com/sharing/rest/oauth2/token&#x27;,
+        scope: [],
+        profile: function (credentials, params, get, callback) {
+
+            const query = {
+                token: params.access_token,
+                f: &#x27;json&#x27;
+            };
+
+            get(&#x27;https://www.arcgis.com/sharing/rest/community/self&#x27;, query, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    provider: &#x27;arcgisonline&#x27;,
+                    orgId: profile.orgId,
+                    username: profile.username,
+                    displayName: profile.fullName,
+                    name: {
+                        first: profile.firstName,
+                        last: profile.lastName
+                    },
+                    email: profile.email,
+                    role: profile.role,
+                    raw: profile
+                };
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.auth0" id="apidoc.element.bell.providers.auth0">
+        function <span class="apidocSignatureSpan">bell.providers.</span>auth0
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">auth0 = function (options) {
+
+    const validated = Joi.validate(options, Joi.object({
+        domain: Joi.string().hostname().required()
+    }));
+    Hoek.assert(!validated.error, validated.error);
+    const settings = validated.value;
+    const auth0BaseUrl = `https://${settings.domain}`;
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: `${auth0BaseUrl}/authorize`,
+        token: `${auth0BaseUrl}/oauth/token`,
+        profile: function (credentials, params, get, callback) {
+
+            get(`${auth0BaseUrl}/userinfo`, null, (profile) =&#x3e; {
+                // https://auth0.com/docs/user-profile/normalized
+                credentials.profile = {
+                    id: profile.user_id,
+                    email: profile.email,
+                    displayName: profile.name,
+                    name: {
+                        first: profile.given_name,
+                        last: profile.family_name
+                    },
+                    raw: profile
+                };
+                callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.azuread" id="apidoc.element.bell.providers.azuread">
+        function <span class="apidocSignatureSpan">bell.providers.</span>azuread
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">azuread = function (options) {
+
+    options = options || {};
+    const tenantId = options.tenant || &#x27;common&#x27;;
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: &#x27;https://login.microsoftonline.com/&#x27; + tenantId + &#x27;/oauth2/authorize&#x27;,
+        token: &#x27;https://login.microsoftonline.com/&#x27; + tenantId + &#x27;/oauth2/token&#x27;,
+        scope: [&#x27;openid&#x27;,&#x27;offline_access&#x27;, &#x27;profile&#x27;],
+        profile: function (credentials, params, get, reply) {
+
+            get(&#x27;https://login.microsoftonline.com/&#x27; + tenantId + &#x27;/openid/userinfo&#x27;, null, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.oid,
+                    displayName: profile.name,
+                    email: profile.upn || profile.email,
+                    raw: profile
+                };
+                return reply();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.bitbucket" id="apidoc.element.bell.providers.bitbucket">
+        function <span class="apidocSignatureSpan">bell.providers.</span>bitbucket
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bitbucket = function () {
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        auth: &#x27;https://bitbucket.org/site/oauth2/authorize&#x27;,
+        token: &#x27;https://bitbucket.org/site/oauth2/access_token&#x27;,
+        profile: function (credentials, params, get, callback) {
+
+            get(&#x27;https://api.bitbucket.org/2.0/user&#x27;, null, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.uuid,
+                    username: profile.username,
+                    displayName: profile.display_name,
+                    raw: profile
+                };
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.discord" id="apidoc.element.bell.providers.discord">
+        function <span class="apidocSignatureSpan">bell.providers.</span>discord
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">discord = function () {
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        auth: &#x27;https://discordapp.com/api/oauth2/authorize&#x27;,
+        token: &#x27;https://discordapp.com/api/oauth2/token&#x27;,
+        scope: [&#x27;email&#x27;, &#x27;identify&#x27;], // see https://discordapp.com/developers/docs/topics/oauth2#scopes
+        profile: function (credentials, params, get, callback) {
+
+            get(&#x27;https://discordapp.com/api/users/@me&#x27;, null, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.id,
+                    discriminator: profile.discriminator,
+                    username: profile.username,
+                    email: profile.email,
+                    mfa_enabled: profile.mfa_enabled,
+                    verified: profile.verified,
+                    avatar: {
+                        id: profile.avatar,
+                        url: &#x27;https://discordapp.com/api/users/&#x27; + profile.id + &#x27;/avatars/&#x27; + profile.avatar + &#x27;.jpg&#x27;
+                    },
+                    raw: profile
+                };
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.dropbox" id="apidoc.element.bell.providers.dropbox">
+        function <span class="apidocSignatureSpan">bell.providers.</span>dropbox
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dropbox = function (options) {
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: &#x27;https://www.dropbox.com/1/oauth2/authorize&#x27;,
+        token: &#x27;https://api.dropbox.com/1/oauth2/token&#x27;,
+        profile: function (credentials, params, get, callback) {
+
+            get(&#x27;https://api.dropbox.com/1/account/info&#x27;, null, (profile) =&#x3e; {
+
+                credentials.profile = profile;
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.facebook" id="apidoc.element.bell.providers.facebook">
+        function <span class="apidocSignatureSpan">bell.providers.</span>facebook
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">facebook = function (options) {
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: &#x27;https://www.facebook.com/v2.3/dialog/oauth&#x27;,
+        token: &#x27;https://graph.facebook.com/v2.3/oauth/access_token&#x27;,
+        scope: [&#x27;email&#x27;],
+        scopeSeparator: &#x27;,&#x27;,
+        profile: function (credentials, params, get, callback) {
+
+            const query = {
+                appsecret_proof: Crypto.createHmac(&#x27;sha256&#x27;, this.clientSecret).update(credentials.token).digest(&#x27;hex&#x27;),
+                fields: &#x27;id,name,email,first_name,last_name,middle_name,gender,link,locale,timezone,updated_time,verified&#x27;
+            };
+
+            get(&#x27;https://graph.facebook.com/v2.3/me&#x27;, query, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.id,
+                    username: profile.username,
+                    displayName: profile.name,
+                    name: {
+                        first: profile.first_name,
+                        last: profile.last_name,
+                        middle: profile.middle_name
+                    },
+                    email: profile.email,
+                    raw: profile
+                };
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.fitbit" id="apidoc.element.bell.providers.fitbit">
+        function <span class="apidocSignatureSpan">bell.providers.</span>fitbit
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fitbit = function (options) {
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: false,
+        auth: &#x27;https://www.fitbit.com/oauth2/authorize&#x27;,
+        token: &#x27;https://api.fitbit.com/oauth2/token&#x27;,
+        scope: [&#x27;activity&#x27;,&#x27;profile&#x27;], //see https://dev.fitbit.com/docs/oauth2/#scope
+        profile: function (credentials, params, get, callback) {
+
+            get(&#x27;https://api.fitbit.com/1/user/-/profile.json&#x27;, null, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.user.encodedId,
+                    displayName: profile.user.displayName,
+                    name: profile.user.fullName
+                };
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.foursquare" id="apidoc.element.bell.providers.foursquare">
+        function <span class="apidocSignatureSpan">bell.providers.</span>foursquare
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">foursquare = function (options) {
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: &#x27;https://foursquare.com/oauth2/authenticate&#x27;,
+        token: &#x27;https://foursquare.com/oauth2/access_token&#x27;,
+        profile: function (credentials, params, get, callback) {
+
+            const query = {
+                v: &#x27;20140701&#x27;,
+                oauth_token: credentials.token
+            };
+
+            get(&#x27;https://api.foursquare.com/v2/users/self&#x27;, query, (data) =&#x3e; {
+
+                const profile = data.response.user;
+
+                credentials.profile = {
+                    id: profile.id,
+                    displayName: profile.firstName + &#x27; &#x27; + profile.lastName,
+                    name: {
+                        first: profile.firstName,
+                        last: profile.lastName
+                    },
+                    email: profile.contact.email,
+                    raw: profile
+                };
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.github" id="apidoc.element.bell.providers.github">
+        function <span class="apidocSignatureSpan">bell.providers.</span>github
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">github = function (options) {
+
+    options = options || {};
+
+    const uri = options.uri || &#x27;https://github.com&#x27;;
+    const user = options.uri ? options.uri + &#x27;/api/v3/user&#x27; : &#x27;https://api.github.com/user&#x27;;
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: uri + &#x27;/login/oauth/authorize&#x27;,
+        token: uri + &#x27;/login/oauth/access_token&#x27;,
+        scope: [&#x27;user:email&#x27;],
+        scopeSeparator: &#x27;,&#x27;,
+        headers: { &#x27;User-Agent&#x27;: &#x27;hapi-bell-github&#x27; },
+        profile: function (credentials, params, get, callback) {
+
+            get(user, null, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.id,
+                    username: profile.login,
+                    displayName: profile.name,
+                    email: profile.email,
+                    raw: profile
+                };
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.gitlab" id="apidoc.element.bell.providers.gitlab">
+        function <span class="apidocSignatureSpan">bell.providers.</span>gitlab
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">gitlab = function (options) {
+
+    options = options || {};
+
+    const uri = options.uri || &#x27;https://gitlab.com&#x27;;
+    const user = uri + &#x27;/api/v3/user&#x27;;
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        auth: uri + &#x27;/oauth/authorize&#x27;,
+        token: uri + &#x27;/oauth/token&#x27;,
+        profile: function (credentials, params, get, callback) {
+
+            get(user, null, (profile) =&#x3e; {
+
+                credentials.profile = profile;
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.google" id="apidoc.element.bell.providers.google">
+        function <span class="apidocSignatureSpan">bell.providers.</span>google
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">google = function (options) {
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: &#x27;https://accounts.google.com/o/oauth2/v2/auth&#x27;,
+        token: &#x27;https://www.googleapis.com/oauth2/v4/token&#x27;,
+        scope: [&#x27;profile&#x27;, &#x27;email&#x27;],
+        profile: function (credentials, params, get, callback) {
+
+            get(&#x27;https://www.googleapis.com/oauth2/v3/userinfo&#x27;, null, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.sub,
+                    displayName: profile.name,
+                    name: {
+                        given_name: profile.given_name,
+                        family_name: profile.family_name
+                    },
+                    email: profile.email,
+                    raw: profile
+                };
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.googleplus" id="apidoc.element.bell.providers.googleplus">
+        function <span class="apidocSignatureSpan">bell.providers.</span>googleplus
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">googleplus = function (options) {
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: &#x27;https://accounts.google.com/o/oauth2/v2/auth&#x27;,
+        token: &#x27;https://www.googleapis.com/oauth2/v4/token&#x27;,
+        scope: [&#x27;profile&#x27;, &#x27;email&#x27;],
+        profile: function (credentials, params, get, callback) {
+
+            get(&#x27;https://www.googleapis.com/plus/v1/people/me&#x27;, null, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.id,
+                    displayName: profile.displayName,
+                    name: profile.name,
+                    emails: profile.emails,
+                    raw: profile
+                };
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.instagram" id="apidoc.element.bell.providers.instagram">
+        function <span class="apidocSignatureSpan">bell.providers.</span>instagram
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">instagram = function (options) {
+
+    options = options || {};
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: &#x27;https://api.instagram.com/oauth/authorize&#x27;,
+        token: &#x27;https://api.instagram.com/oauth/access_token&#x27;,
+        scope: [&#x27;basic&#x27;],
+        scopeSeparator: &#x27; &#x27;,
+        profile: function (credentials, params, get, callback) {
+
+            credentials.profile = {
+                id: params.user.id,
+                username: params.user.username,
+                displayName: params.user.full_name,
+                raw: params.user
+            };
+
+            if (options.extendedProfile === false) { // Defaults to true
+                return callback();
+            }
+
+            get(&#x27;https://api.instagram.com/v1/users/self&#x27;, { access_token: credentials.token }, (profile) =&#x3e; {
+
+                credentials.profile.raw = profile.data;
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.linkedin" id="apidoc.element.bell.providers.linkedin">
+        function <span class="apidocSignatureSpan">bell.providers.</span>linkedin
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">linkedin = function (options) {
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: &#x27;https://www.linkedin.com/uas/oauth2/authorization&#x27;,
+        token: &#x27;https://www.linkedin.com/uas/oauth2/accessToken&#x27;,
+        scope: [&#x27;r_basicprofile&#x27;, &#x27;r_emailaddress&#x27;],
+        scopeSeparator: &#x27;,&#x27;,
+        profile: function (credentials, params, get, callback) {
+
+            const query = {
+                format: &#x27;json&#x27;,
+                appsecret_proof: Crypto.createHmac(&#x27;sha256&#x27;, this.clientSecret).update(credentials.token).digest(&#x27;hex&#x27;)
+            };
+
+            let fields = &#x27;&#x27;;
+            if (this.providerParams &#x26;&#x26; this.providerParams.fields) {
+                fields = this.providerParams.fields;
+            }
+
+            get(&#x27;https://api.linkedin.com/v1/people/~&#x27; + fields, query, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.id,
+                    name: {
+                        first: profile.firstName,
+                        last: profile.lastName
+                    },
+                    email: profile.emailAddress,
+                    headline: profile.headline,
+                    raw: profile
+                };
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.live" id="apidoc.element.bell.providers.live">
+        function <span class="apidocSignatureSpan">bell.providers.</span>live
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">live = function (options) {
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: &#x27;https://login.live.com/oauth20_authorize.srf&#x27;,
+        token: &#x27;https://login.live.com/oauth20_token.srf&#x27;,
+        scope: [&#x27;wl.basic&#x27;, &#x27;wl.emails&#x27;],
+        profile: function (credentials, params, get, callback) {
+
+            get(&#x27;https://apis.live.net/v5.0/me&#x27;, null, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.id,
+                    username: profile.username,
+                    displayName: profile.name,
+                    name: {
+                        first: profile.first_name,
+                        last: profile.last_name
+                    },
+                    email: profile.emails &#x26;&#x26; (profile.emails.preferred || profile.emails.account),
+                    raw: profile
+                };
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.medium" id="apidoc.element.bell.providers.medium">
+        function <span class="apidocSignatureSpan">bell.providers.</span>medium
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">medium = function (options) {
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: &#x27;https://medium.com/m/oauth/authorize&#x27;,
+        token: &#x27;https://medium.com/v1/tokens&#x27;,
+        scope: [&#x27;basicProfile&#x27;],
+        scopeSeparator: &#x27;,&#x27;,
+        headers: { &#x27;User-Agent&#x27;: &#x27;hapi-bell-medium&#x27; },
+        profile: function (credentials, params, get, callback) {
+
+            get(&#x27;https://api.medium.com/v1/me&#x27;, null, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.data.id,
+                    username: profile.data.username,
+                    displayName: profile.data.name,
+                    raw: profile.data
+                };
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.meetup" id="apidoc.element.bell.providers.meetup">
+        function <span class="apidocSignatureSpan">bell.providers.</span>meetup
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">meetup = function (options) {
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: &#x27;https://secure.meetup.com/oauth2/authorize&#x27;,
+        token: &#x27;https://secure.meetup.com/oauth2/access&#x27;,
+        scope: [&#x27;basic&#x27;],
+        headers: { &#x27;User-Agent&#x27;: &#x27;hapi-bell-meetup&#x27; },
+        profile: function (credentials, params, get, callback) {
+
+            get(&#x27;https://api.meetup.com/2/member/self&#x27;, {}, (profile) =&#x3e; {
+
+                credentials.profile = profile;
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.nest" id="apidoc.element.bell.providers.nest">
+        function <span class="apidocSignatureSpan">bell.providers.</span>nest
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nest = function (options) {
+
+    // According to the official docs, no user data is available via the Nest
+    // OAuth service. Therefore, there is no `profile`.
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: &#x27;https://home.nest.com/login/oauth2&#x27;,
+        token: &#x27;https://api.home.nest.com/oauth2/access_token&#x27;
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.office365" id="apidoc.element.bell.providers.office365">
+        function <span class="apidocSignatureSpan">bell.providers.</span>office365
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">office365 = function (options) {
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: &#x27;https://login.microsoftonline.com/common/oauth2/v2.0/authorize&#x27;,
+        token: &#x27;https://login.microsoftonline.com/common/oauth2/v2.0/token&#x27;,
+        scope: [&#x27;openid&#x27;,&#x27;offline_access&#x27;, &#x27;profile&#x27;],
+        profile: function (credentials, params, get, reply) {
+
+            get(&#x27;https://outlook.office.com/api/v2.0/me&#x27;, null, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.Id,
+                    displayName: profile.DisplayName,
+                    email: profile.EmailAddress,
+                    raw: profile
+                };
+                return reply();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.okta" id="apidoc.element.bell.providers.okta">
+        function <span class="apidocSignatureSpan">bell.providers.</span>okta
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">okta = function (options) {
+
+    const results = Joi.validate(options, internals.schema);
+    Hoek.assert(!results.error, results.error);
+    const settings = results.value;
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: settings.uri + &#x27;/oauth2/v1/authorize&#x27;,
+        token: settings.uri + &#x27;/oauth2/v1/token&#x27;,
+        scope: [&#x27;openid&#x27;, &#x27;email&#x27;, &#x27;offline_access&#x27;],
+        profile: function (credentials, params, get, callback) {
+
+            get(settings.uri + &#x27;/oauth2/v1/userinfo&#x27;, null, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.sub,
+                    username: profile.email,
+                    displayName: profile.nickname,
+                    firstName: profile.given_name,
+                    lastName: profile.family_name,
+                    email: profile.email,
+                    raw: profile
+                };
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.phabricator" id="apidoc.element.bell.providers.phabricator">
+        function <span class="apidocSignatureSpan">bell.providers.</span>phabricator
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">phabricator = function (options) {
+
+    const results = Joi.validate(options, internals.schema);
+
+    Hoek.assert(!results.error, results.error);
+
+    const settings = results.value;
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: settings.uri + &#x27;/oauthserver/auth/&#x27;,
+        token: settings.uri + &#x27;/oauthserver/token/&#x27;,
+        scope: [&#x27;whoami&#x27;],
+        scopeSeparator: &#x27;,&#x27;,
+        profile: function (credentials, params, get, callback) {
+
+            const query = {
+                access_token: credentials.token
+            };
+
+            get(settings.uri + &#x27;/api/user.whoami&#x27;, query, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.result.phid,
+                    username: profile.result.userName,
+                    displayName: profile.result.realName,
+                    email: profile.result.primaryEmail,
+                    raw: profile
+                };
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.pingfed" id="apidoc.element.bell.providers.pingfed">
+        function <span class="apidocSignatureSpan">bell.providers.</span>pingfed
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pingfed = function (options) {
+
+    options = options || {};
+
+    const uri = options.uri || &#x27;https://login-dev.ext.hpe.com&#x27;;
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        auth: uri + &#x27;/as/authorization.oauth2&#x27;,
+        token: uri + &#x27;/as/token.oauth2&#x27;,
+        scope: [&#x27;openid&#x27;,&#x27;email&#x27;],
+        scopeSeparator: &#x27; &#x27;,
+        useParamsAuth: true,
+        profile: function (credentials, params, get, callback) {
+
+            const userUrl = uri + &#x27;/idp/userinfo.openid&#x27;;
+
+            get(userUrl, null, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.sub,
+                    username: profile.email,
+                    displayName: profile.email,
+                    email: profile.email,
+                    raw: profile
+                };
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.pinterest" id="apidoc.element.bell.providers.pinterest">
+        function <span class="apidocSignatureSpan">bell.providers.</span>pinterest
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pinterest = function (options) {
+
+    return {
+        name: &#x27;pinterest&#x27;,
+        protocol: &#x27;oauth2&#x27;,
+        auth: &#x27;https://api.pinterest.com/oauth/&#x27;,
+        token: &#x27;https://api.pinterest.com/v1/oauth/token&#x27;,
+        useParamsAuth: true,
+        scope: [&#x27;read_public&#x27;, &#x27;write_public&#x27;, &#x27;read_relationships&#x27;, &#x27;write_relationships&#x27;],
+        scopeSeparator: &#x27;,&#x27;,
+        profile: function (credentials, params, get, callback) {
+
+            const query = {
+                fields: &#x27;id,username,first_name,last_name,bio,created_at,counts,image&#x27;
+            };
+
+            get(&#x27;https://api.pinterest.com/v1/me/&#x27;, query, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.data.id,
+                    username: profile.data.username,
+                    name: {
+                        first: profile.data.first_name,
+                        last: profile.data.last_name
+                    },
+                    raw: profile
+                };
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.reddit" id="apidoc.element.bell.providers.reddit">
+        function <span class="apidocSignatureSpan">bell.providers.</span>reddit
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reddit = function (options) {
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: false,
+        auth: &#x27;https://www.reddit.com/api/v1/authorize&#x27;,
+        token: &#x27;https://www.reddit.com/api/v1/access_token&#x27;,
+        scope: [&#x27;identity&#x27;], // minimal scope to request
+        scopeSeparator: &#x27; &#x27;,
+        headers: { &#x27;User-Agent&#x27;: &#x27;hapi-bell-reddit&#x27; },
+        profile: function (credentials, params, get, callback) {
+
+            const queryOptions = {
+                access_token: credentials.token,
+                client_id: this.clientId
+            };
+
+            get(&#x27;https://oauth.reddit.com/api/v1/me&#x27;, queryOptions, (profile) =&#x3e; {
+
+                credentials.profile = profile;
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.salesforce" id="apidoc.element.bell.providers.salesforce">
+        function <span class="apidocSignatureSpan">bell.providers.</span>salesforce
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">salesforce = function (options) {
+
+    options = options || {};
+
+    const uri = options.uri || &#x27;https://login.salesforce.com&#x27;;
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        auth: uri + &#x27;/services/oauth2/authorize&#x27;,
+        token: uri + &#x27;/services/oauth2/token&#x27;,
+        useParamsAuth: true,
+        profile: function (credentials, params, get, callback) {
+
+            const userUrl = params.id;
+
+            get(userUrl, null, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.user_id,
+                    username: profile.username,
+                    displayName: profile.display_name,
+                    firstName: profile.first_name,
+                    lastName: profile.last_name,
+                    email: profile.email,
+                    raw: profile
+                };
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.slack" id="apidoc.element.bell.providers.slack">
+        function <span class="apidocSignatureSpan">bell.providers.</span>slack
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function slackProvider(options) {
+    // Set defaults in case options are not set
+    options = options || {};
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        auth: `${uri}/oauth/authorize`,
+        token: `${uri}/api/oauth.access`,
+        // This is the bare minimum scope required to identify the user
+        scope: [&#x27;identify&#x27;],
+        profile: (credentials, params, get, callback) =&#x3e; {
+
+            credentials.profile = {
+                access_token: params.access_token,
+                scope: params.scope
+            };
+            // If `extendedProfile` is set to `false`, just return immediately.
+            // `access_token` on `credentials.profile` can now be used to call Slack methods.
+            if (options.extendedProfile === false) {
+                return callback();
+            }
+            // If `extendedProfile` is true, get information that identifies the user.
+            // Call the `auth.test` Slack method, providing the `access_token` as `token`.
+            const query = {
+                token: params.access_token
+            };
+            return get(`${uri}/api/auth.test`, query, (profile) =&#x3e; {
+
+                credentials.profile.user_id = profile.user_id; // Slack User ID
+                credentials.profile.user = profile.user; // Slack User Screen Name
+                credentials.profile.raw = profile; // Raw Profile
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.spotify" id="apidoc.element.bell.providers.spotify">
+        function <span class="apidocSignatureSpan">bell.providers.</span>spotify
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">spotify = function (options) {
+
+    options = options || {};
+
+    const uri = options.uri || &#x27;https://accounts.spotify.com&#x27;;
+    const user = options.uri ? options.uri + &#x27;/v1/me&#x27; : &#x27;https://api.spotify.com/v1/me&#x27;;
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: uri + &#x27;/authorize&#x27;,
+        token: uri + &#x27;/api/token&#x27;,
+        scope: [&#x27;user-read-email&#x27;],
+        scopeSeparator: &#x27;,&#x27;,
+        headers: { &#x27;User-Agent&#x27;: &#x27;hapi-bell-spotify&#x27; },
+        profile: function (credentials, params, get, callback) {
+
+            get(user, null, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.id,
+                    username: profile.id,
+                    displayName: profile.display_name,
+                    email: profile.email,
+                    raw: profile
+                };
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.tumblr" id="apidoc.element.bell.providers.tumblr">
+        function <span class="apidocSignatureSpan">bell.providers.</span>tumblr
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tumblr = function (options) {
+
+    return {
+        protocol: &#x27;oauth&#x27;,
+        signatureMethod: &#x27;HMAC-SHA1&#x27;,
+        temporary: &#x27;https://www.tumblr.com/oauth/request_token&#x27;,
+        auth: &#x27;https://www.tumblr.com/oauth/authorize&#x27;,
+        token: &#x27;https://www.tumblr.com/oauth/access_token&#x27;,
+        profile: function (credentials, params, get, callback) {
+
+            get(&#x27;https://api.tumblr.com/v2/user/info&#x27;, {}, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    username: profile.response.user.name,
+                    raw: profile.response.user
+                };
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.twitch" id="apidoc.element.bell.providers.twitch">
+        function <span class="apidocSignatureSpan">bell.providers.</span>twitch
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">twitch = function (options) {
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: &#x27;https://api.twitch.tv/kraken/oauth2/authorize&#x27;,
+        token: &#x27;https://api.twitch.tv/kraken/oauth2/token&#x27;,
+        scope: [&#x27;user_read&#x27;],
+        scopeSeparator: &#x27; &#x27;,
+        profile: function (credentials, params, get, callback) {
+
+            const queryOptions = {
+                oauth_token: params.access_token
+            };
+
+            get(&#x27;https://api.twitch.tv/kraken/user&#x27;, queryOptions, (profile) =&#x3e; {
+
+                credentials.profile = profile;
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.twitter" id="apidoc.element.bell.providers.twitter">
+        function <span class="apidocSignatureSpan">bell.providers.</span>twitter
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">twitter = function (options) {
+
+    const defaults = {
+        extendedProfile: true,
+        getMethod: &#x27;users/show&#x27;
+    };
+    const settings = Hoek.applyToDefaults(defaults, options || {});
+
+    return {
+        protocol: &#x27;oauth&#x27;,
+        signatureMethod: &#x27;HMAC-SHA1&#x27;,
+        temporary: &#x27;https://api.twitter.com/oauth/request_token&#x27;,
+        auth: &#x27;https://api.twitter.com/oauth/authenticate&#x27;,
+        token: &#x27;https://api.twitter.com/oauth/access_token&#x27;,
+        profile: function (credentials, params, get, callback) {
+
+            credentials.profile = {
+                id: params.user_id,
+                username: params.screen_name
+            };
+
+            if (settings.extendedProfile === false) {      // Defaults to true
+                return callback();
+            }
+
+            const paramDefaults = {
+                user_id: params.user_id
+            };
+            const getParams = Hoek.applyToDefaults(paramDefaults, settings.getParams || {});
+
+            get(`https://api.twitter.com/1.1/${settings.getMethod}.json`, getParams, (profile) =&#x3e; {
+
+                credentials.profile.displayName = profile.name;
+                credentials.profile.raw = profile;
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.vk" id="apidoc.element.bell.providers.vk">
+        function <span class="apidocSignatureSpan">bell.providers.</span>vk
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">vk = function (options) {
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: &#x27;https://oauth.vk.com/authorize&#x27;,
+        token: &#x27;https://oauth.vk.com/access_token&#x27;,
+        profile: function (credentials, params, get, callback) {
+
+            const query = {
+                uids: params.user_id,
+                access_token: params.access_token
+            };
+
+            get(&#x27;https://api.vk.com/method/users.get&#x27;, query, (data) =&#x3e; {
+
+                const profile = data.response[0];
+                credentials.profile = {
+                    id: profile.uid,
+                    displayName: profile.first_name + &#x27; &#x27; + profile.last_name,
+                    name: {
+                        first: profile.first_name,
+                        last: profile.last_name
+                    },
+                    raw: profile
+                };
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.wordpress" id="apidoc.element.bell.providers.wordpress">
+        function <span class="apidocSignatureSpan">bell.providers.</span>wordpress
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">wordpress = function () {
+
+    const baseUrl = &#x27;https://public-api.wordpress.com/&#x27;;
+
+    return {
+        protocol: &#x27;oauth2&#x27;,
+        useParamsAuth: true,
+        auth: `${baseUrl}oauth2/authorize`,
+        token: `${baseUrl}oauth2/token`,
+        scope: [&#x27;global&#x27;],
+        profile: function (credentials, params, get, callback) {
+
+            const query = {
+                format: &#x27;json&#x27;,
+                token: credentials.token,
+                appsecret_proof: Crypto.createHmac(&#x27;sha256&#x27;, this.clientSecret).update(credentials.token).digest(&#x27;hex&#x27;)
+            };
+
+            credentials.profile = {};
+
+            get(`${baseUrl}rest/v1.1/me`, query, (profile) =&#x3e; {
+
+                credentials.profile.id = profile.ID;
+                credentials.profile.username = profile.username;
+                credentials.profile.displayName = profile.display_name;
+                credentials.profile.raw = profile;
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bell.providers.yahoo" id="apidoc.element.bell.providers.yahoo">
+        function <span class="apidocSignatureSpan">bell.providers.</span>yahoo
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yahoo = function (options) {
+
+    return {
+        protocol: &#x27;oauth&#x27;,
+        signatureMethod: &#x27;HMAC-SHA1&#x27;,
+        temporary: &#x27;https://api.login.yahoo.com/oauth/v2/get_request_token&#x27;,
+        auth: &#x27;https://api.login.yahoo.com/oauth/v2/request_auth&#x27;,
+        token: &#x27;https://api.login.yahoo.com/oauth/v2/get_token&#x27;,
+        profile: function (credentials, params, get, callback) {
+
+            get(&#x27;https://social.yahooapis.com/v1/user/&#x27; + params.xoauth_yahoo_guid + &#x27;/profile&#x27;, { format: &#x27;json&#x27; }, (profile) =&#x3e; {
+
+                credentials.profile = {
+                    id: profile.profile.guid,
+                    displayName: profile.profile.givenName + &#x27; &#x27; + profile.profile.familyName,
+                    name: {
+                        first: profile.profile.givenName,
+                        last: profile.profile.familyName
+                    },
+                    raw: profile
+                };
+
+                return callback();
+            });
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
